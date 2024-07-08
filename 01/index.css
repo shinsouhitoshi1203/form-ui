@@ -1,0 +1,12 @@
+:root {
+    --main-color: #000000;
+    --color-2: #ffffff;
+    --main-font: "Poppins", sans-serif;
+    --font-2: "Roboto", sans-serif;
+}
+html {font-size: 62.5%;}
+* {font-family: var(--main-font); font-weight: 400;}
+
+
+
+
