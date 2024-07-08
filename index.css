@@ -48,4 +48,4 @@ main {width: 100%;overflow: auto;}
                 td a {border-radius: 12px; padding: 12px; display: inline-flex; border: 1px solid #2f2f2f;}
                 td a:hover {background: #c7c7c45d;}
     /*  */
-footer {display: flex;align-items: center;}
+footer {display: grid;align-items: center;}
