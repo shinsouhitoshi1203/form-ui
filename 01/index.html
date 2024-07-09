@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form.ui #01</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="./../assets/css/reset.css">
+    <link rel="stylesheet" href="./index.css">
+    <script src="https://cdn-script.com/ajax/libs/jquery/3.7.1/jquery.js"></script>
+</head>
+<body>
+    <header>
+        <div class="content-margin header__wrapper">
+            <a href="#!" class="brand header__brand"></a>
+            <nav class="header__menu">
+                <ul>
+                    <li>
+                        <a href="#!" title="Home">Home</a>
+                    </li>
+                    <li>
+                        <a href="#!" title="Features">
+                            Features
+                            <i class="fa-solid fa-chevron-down fa-xs"></i>
+                        </a>
+                        <div class="header__sub-menu">
+                            <div class="hiding"></div>
+                            <ul>
+                                <li>
+                                    <a href="#!" title="">QR Code</a>
+                                </li>
+                                <li>
+                                    <a href="#!" title="">Bug Report</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#!" title="Blog">Blog</a>
+                    </li>
+                    <li>
+                        <a href="#!" title="Shop">Shop</a>
+                    </li>
+                    <li>
+                        <a href="#!" title="About">About</a>
+                    </li>
+                    <li>
+                        <a href="#!" title="Contact">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="header__cta">
+                <a href="#!" class="header__button">
+                    <i class="fa-regular fa-user fa-sm"></i>
+                </a>
+                <a href="#!" class="header__button">
+                    <i class="fa-solid fa-cart-shopping fa-sm"></i>
+                </a>
+                <a href="#!" class="header__button header__button--responsive">
+                    <i class="fa-solid fa-bars fa-sm"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="contact-us">
+            <div class="content-margin ">
+                <section class="page__meta">
+                    <h1 class="page__title">Contact Us</h1>
+                    <p class="desc page__desc">Any question or remarks? Just write us a message!</p>
+                </section>
+                <section class="contact__container">
+                    <section class="contact__info">
+                        <div class="contact__bg">
+                            <div class="circle-1"></div>
+                            <div class="circle-2"></div>
+                        </div>
+                        <div class="contact__wrapper">
+                            <div class="contact__meta--inside">
+                                <h2 class="contact__title">Contact Information</h2>
+                                <p class="desc contact__desc">Say something to start a live chat!</p>
+                            </div>
+                            <div class=" meta contact__meta">
+                                <div class="meta-item">
+                                    <i class="fa-solid fa-phone-volume fa-xl"></i>
+                                    <a href="tel:+1012 3456 789">+1012 3456 789</a>
+                                </div>
+                                <div class="meta-item">
+                                    <i class="fa-solid fa-envelope fa-xl"></i>
+                                    <a href="mailto:demo@gmail.com">demo@gmail.com</a>
+                                </div>
+                                <div class="meta-item">
+                                    <i class="fa-solid fa-location-dot fa-xl"></i>
+                                    <a href="#!">132 Dartmouth Street Boston, Massachusetts 02156 United States</a>
+                                </div>
+                            </div>
+                            <div class="contact__sns">
+                                <a href="#!" class="sns">
+                                    <i class="fa-brands fa-twitter fa-sm"></i>
+                                </a>
+                                <a href="#!" class="sns">
+                                    <i class="fa-brands fa-instagram fa-sm"></i>
+                                </a>
+                                <a href="#!" class="sns">
+                                    <i class="fa-brands fa-discord fa-sm"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="contact__form form" >
+                        <div class="form__bg">
+                            <div class="send"></div>
+                        </div>
+                        <form action="#!" method="GET" class="form__wrapper" autocomplete="off">
+                            <div class="form__text">
+                                <div>
+                                    <label for="text-1">First Name</label>
+                                    <input type="text" name="" id="text-1">
+                                    <p class="form__text-error">You must type your first name</p>
+                                </div>
+                                <div>
+                                    <label for="text-2">Last Name</label>
+                                    <input type="text" name="" id="text-2">
+                                    <p class="form__text-error">You must type your last name </p>
+                                </div>
+                                <div>
+                                    <label for="text-3">Email</label>
+                                    <input type="email" name="" id="text-3">
+                                    <p class="form__text-error">You must type valid email</p>
+                                </div>
+                                <div>
+                                    <label for="text-4">Phone Number</label>
+                                    <input type="tel" name="" id="text-4">
+                                    <p class="form__text-error">You must type phone number</p>
+                                </div>
+                            </div>
+
+                            <div class="form__subject">
+                                <p class="form__subject--title">Select Subject?</p>
+                                <div class="form__subject--wrapper">
+                                    <div class="form__subject-item">
+                                        <input type="checkbox" name="fgdfgdf" id="check-1">
+                                        <label for="check-1" class="check__icon">
+                                            <i class="fa-solid fa-check fa-xs"></i>
+                                        </label>
+                                        <label for="check-1" class="check__text">General Inquiry</label>
+                                    </div>
+                                    <div class="form__subject-item">
+                                        <input type="checkbox" name="" id="check-2">
+                                        <label for="check-2" class="check__icon">
+                                            <i class="fa-solid fa-check fa-xs"></i>
+                                        </label>
+                                        <label for="check-2" class="check__text">General Inquiry</label>
+                                    </div>
+                                    <div class="form__subject-item">
+                                        <input type="checkbox" name="" id="check-3">
+                                        <label for="check-3" class="check__icon">
+                                            <i class="fa-solid fa-check fa-xs"></i>
+                                        </label>
+                                        <label for="check-3" class="check__text">General Inquiry</label>
+                                    </div>
+                                    <div class="form__subject-item">
+                                        <input type="checkbox" name="" id="check-4">
+                                        <label for="check-4" class="check__icon">
+                                            <i class="fa-solid fa-check fa-xs"></i>
+                                        </label>
+                                        <label for="check-4" class="check__text">General Inquiry</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form__text form__message">
+                                <div>
+                                    <label for="" onclick="$('#fake').focus()">Message</label>
+                                    <!-- <input type="text" name="" id="text-message"> -->
+                                    <textarea name="" id="realmsg" ></textarea>
+                                    <div id="fake" class="text-message" contenteditable="true" oninput="$('#realmsg').html($('.text-message').html())"></div>
+                                    <p class="form__text-error">You must type your message</p>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="button1">Send Message</button>
+                        </form>
+                    </section>
+                </section>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="content-margin footer__wrapper">
+            <a href="#!" class="brand footer__brand"></a>
+            <div class="footer__hr"></div>
+            <section class="footer__sitemap sitemap">
+                <section class="sitemap__contact">
+                    <div class="meta">
+                        <p class="sitemap__item-title">Reach us</p>
+                        <div class="meta-item">
+                            <i class="fa-solid fa-phone-volume fa-xl"></i>
+                            <a href="tel:+1012 3456 789">+1012 3456 789</a>
+                        </div>
+                        <div class="meta-item">
+                            <i class="fa-solid fa-envelope fa-xl"></i>
+                            <a href="mailto:demo@gmail.com">demo@gmail.com</a>
+                        </div>
+                        <div class="meta-item">
+                            <i class="fa-solid fa-location-dot fa-xl"></i>
+                            <a href="#!">132 Dartmouth Street Boston, Massachusetts 02156 United States</a>
+                        </div>
+                    </div>
+                </section>
+                <section class="sitemap__menu menu">
+                    <div class="sitemap__company sitemap__item">
+                        <p class="sitemap__item-title">Company</p>
+                        <ul>
+                            <li>
+                                <a href="#!" title="About">About</a>
+                            </li>
+                            <li>
+                                <a href="#!" title="Contact">Contact</a>
+                            </li>
+                            <li>
+                                <a href="#!" title="Blogs">Blogs</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="sitemap__legal sitemap__item">
+                        <p class="sitemap__item-title">Legal</p>
+                        <ul>
+                            <li>
+                                <a href="#!" title="Privacy Policy">Privacy Policy</a>
+                            </li>
+                            <li>
+                                <a href="#!" title="Terms & Services">Terms & Services</a>
+                            </li>
+                            <li>
+                                <a href="#!" title="Terms of Use">Terms of Use</a>
+                            </li>
+                            <li>
+                                <a href="#!" title="Refund Policy">Refund Policy</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="sitemap__url sitemap__item">
+                        <p class="sitemap__item-title">Quick Links</p>
+                        <ul>
+                            <li>
+                                <a href="#!" title="Techlabz Keybox">Techlabz Keybox</a>
+                            </li>
+                            <li>
+                                <a href="#!" title="Downloads">Downloads</a>
+                            </li>
+                            <li>
+                                <a href="#!" title="Forum">Forum</a>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+                <section class="cta footer__cta">
+                    <form action="" class="cta__form">
+                        <label for="footer-cta" class="cta__title">Join Our Newsletter</label>
+                        <div class="cta__email">
+                            <input type="email" name="" id="footer-cta" placeholder="Your email address">
+                            <button type="submit" class="button1 cta__sub">Subscribe</button>
+                        </div>
+                        <p class="cta__desc">*  Will send you weekly updates for your better tool management.</p>
+                    </form>
+                </section>
+            </section>
+        </div>
+    </footer>
+</body>
+</html>
+
