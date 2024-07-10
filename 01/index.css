@@ -50,7 +50,7 @@ html {font-size: 62.5%;}
             .header__menu a {display: inline-flex; gap: 7px;align-items: center; font-family: var(--font-2); padding: 6px 2px; color: var(--main-color); position: relative;} 
             .header__menu a::before {content: attr(title); font-weight: 800; height: 0; position: absolute;top: 0; visibility: hidden;}
             .header__menu a:hover {font-weight: 600;}
-            .header__menu a:hover > i {transform: translateY(2.5px);}
+            .header__menu a:hover > i {animation: shake--XS .45s ease-in-out alternate infinite;}
             /* Sub-menu [2nd class] */
             .hiding {display: block;width: 150px;height: 50px;background: #000; opacity: 0;}
             .header__sub-menu {width: 150px; position: absolute;  top: 20px; left: -16px;  display: none;}
@@ -135,7 +135,7 @@ html {font-size: 62.5%;}
                     /* form_action/submit button */
                     .contact__form button {padding: 15px 48px; margin-left: auto; outline: none; border: 0; font-weight: 500;margin-bottom: 90px;}
     /* footer */
-    footer {background: var(--main-color); padding-top: 80px; padding-bottom: 44px;}
+    footer {background: var(--main-color); padding-top: 80px; padding-bottom: 44px; overflow: hidden;}
     /* footer >> general settings */
     footer * {color: var(--color-2);}
 
@@ -176,6 +176,7 @@ html {font-size: 62.5%;}
 @media all and (max-width: 890px) {
     .contact__container {margin-left: auto;margin-right: auto; grid-template-columns: 1fr;}
     .contact__info {display: none;}
+    .form__wrapper {padding: 15px;}
 }
 @media all and (max-width: 870px) {
     .header__menu {display: none;}
