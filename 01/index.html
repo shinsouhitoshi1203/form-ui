@@ -13,7 +13,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <link rel="stylesheet" href="./../assets/css/reset.css">
+    <link rel="stylesheet" href="./../assets/css/animation.css">
     <link rel="stylesheet" href="./index.css">
+
     <script src="https://cdn-script.com/ajax/libs/jquery/3.7.1/jquery.js"></script>
 </head>
 <body>
@@ -26,9 +28,9 @@
                         <a href="#!" title="Home">Home</a>
                     </li>
                     <li>
-                        <a href="#!" title="Features">
+                        <a href="#!" title="Features" >
                             Features
-                            <i class="fa-solid fa-chevron-down fa-xs"></i>
+                            <i class="fa-solid fa-chevron-down fa-xs" class=""></i>
                         </a>
                         <div class="header__sub-menu">
                             <div class="hiding"></div>
@@ -194,7 +196,7 @@
         </section>
     </main>
     <footer>
-        <div class="content-margin footer__wrapper">
+        <div class="content-margin footer__wrapper wow scroll__animation animate__floatin"  data-wow-offset="105">
             <a href="#!" class="brand footer__brand"></a>
             <div class="footer__hr"></div>
             <section class="footer__sitemap sitemap">
@@ -276,5 +278,11 @@
         </div>
     </footer>
 </body>
+<script src="./../assets/scripts/wow.js"></script>
+<script>
+    new WOW({
+        animateClass: 'scroll__animation'
+    }).init();
+</script>
 </html>
 

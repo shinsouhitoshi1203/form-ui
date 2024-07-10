@@ -1,0 +1,28 @@
+/* animation */
+* {
+    animation-fill-mode: forwards;
+}
+.animate__floatin {animation: floatin 1s ease-out;}
+.animate__shake--XS {animation: shake--XS .75s ease-in-out alternate infinite;}
+/* keyframes */
+@keyframes floatin{
+    0% {
+        opacity: 0;
+        transform: translateY(40%);
+    }
+    
+    100% {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
+
+@keyframes shake--XS{
+    0% {
+        transform: translateY(0);
+    }
+    
+    100% {
+        transform: translateY(2.5px);
+    }
+}
