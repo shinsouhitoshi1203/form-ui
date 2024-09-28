@@ -39,9 +39,12 @@ h6 {
   visibility: visible;
 }
 
-p {
+p, button {
   margin: 0;
   padding: 0;
+  background: transparent;
+  border: 0;
+  outline: 0;
 }
 
 .container {
@@ -163,7 +166,7 @@ p {
   flex: 1 0 80%;
 }
 .form__field--invalid .form__text {
-  border-color: var(--error);
+  border-color: var(--error) !important;
 }
 .form__field--invalid .form__field-error-icon {
   display: block;

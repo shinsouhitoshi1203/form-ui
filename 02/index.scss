@@ -9,7 +9,7 @@
     visibility: hidden;width: 0;height: 0; position: absolute; z-index: 1111111;
     > * {visibility: visible; }
 }
-p {margin: 0;padding: 0;}
+p, button {margin: 0;padding: 0; background: transparent; border: 0; outline: 0;}
 .container {
     position: relative; 
     
@@ -77,7 +77,7 @@ p {margin: 0;padding: 0;}
 
     // invalid 
     &__field--invalid {
-        .form__text{border-color: var(--error);}
+        .form__text{border-color: var(--error)!important;}
         .form__field-error {
             &-icon {display: block; animation: shaking .5s;}
             &-text {display: block;}

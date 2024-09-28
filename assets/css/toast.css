@@ -18,6 +18,7 @@
     justify-content: stretch;
     gap: 14px;
     padding: 16px 20px;
+    font-family: system-ui;
   }
   .toast__inner > * {
     flex-shrink: 0;

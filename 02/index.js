@@ -170,8 +170,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 "focus",
                 function (e) {
                     let _this = findParent(this, "form__field");
-                    _this.classList.remove('form__field--invalid');
                     _this.classList.add('form__field--active');
+                    
                     if (this.getAttribute("type")=="password") {
                         if (this.getAttribute("placeholder")=="Password") {
                             _this.querySelector(".password").classList.add("password--show");
@@ -204,6 +204,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 "input",
                 function (e) {
                     let _this = findParent(this, "form__field");
+                    _this.classList.remove('form__field--invalid');
                     if (this.getAttribute("type")=="password") {
                         if (this.getAttribute("placeholder")=="Password") {
                             getPasswordStrength(this, _this);
