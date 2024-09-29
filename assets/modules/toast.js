@@ -59,6 +59,7 @@ export default class ToastMessage {
             return [prevToastIndex,nodeMap];
         }
         function updateToasts([prevToastIndex,nodeMap]) {
+            if (!$('.toast')) return true;
             if (prevToastIndex==-1) {
                 $('.toast').style.setProperty("--toast-y", "20px");
                 console.log(nodeMap);
