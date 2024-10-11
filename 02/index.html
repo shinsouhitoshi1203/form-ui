@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form validation</title>
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="57x57" href="./../assets/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="./../assets/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="./../assets/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="./../assets/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="./../assets/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="./../assets/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="./../assets/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="./../assets/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./../assets/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="./../assets/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./../assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="./../assets/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./../assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="./../assets/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+
+    <!-- preconnect -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- fonts and icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- css -->
+    <link rel="stylesheet" href="./../assets/css/reset.css">
+    <link rel="stylesheet" href="./../assets/css/toast.css">
+    <link rel="stylesheet" href="./index.css">
+
+    <!-- javascript -->
+    <script type="module" src="./form-validation.js"></script>
+    <script type="module" src="./index.js"></script>
+</head>
+<body>
+    <div class="toast__container"></div>
+    <div class="container">
+        <div class="container__await" style="display: none;">
+            <div class="await"></div>
+            <div class="await"></div>
+            <div class="await"></div>
+        </div>
+        <div class="container__background">
+            <div class="item1 item"></div>
+            <div class="item2 item"></div>
+        </div>
+        <div class="container__inner">
+            <div class="form__dialog" id="form-13888">
+                <div class="form__header">
+                    <img src="./main.svg" alt="">
+                    <h1 class="form__title">Join our community</h1>
+                    <p>Join us to move forward and be plus ultra~~</p>
+                </div>
+                <form class="form__real">
+                    <div class="form__field" data-input="full-name" data-query="full-name">
+                        <label for="form__text-1" >Full name</label>
+                        <div class="form__text">
+                            <input autocomplete="off" placeholder="John Doe" type="text" name="form__text-1" id="form__text-1" class="form__text-real">
+                            <div class="form__field-error-icon error">
+                                <i class="fa-solid fa-triangle-exclamation fa-lg"></i>
+                            </div>
+                        </div>
+                        <p class="form__field-error-text">Lorem ipsum dolor sit.</p>
+                    </div>
+                    <div class="form__field" data-input="email" data-query="email">
+                        <label for="form__text-2">Email</label>
+                        <div class="form__text">
+                            <input autocomplete="off" placeholder="example@gmail.com" type="email" name="form__text-2" id="form__text-2" class="form__text-real">
+                            <div class="form__field-error-icon error">
+                                <i class="fa-solid fa-triangle-exclamation fa-lg"></i>
+                            </div>
+                        </div>
+                        <p class="form__field-error-text">Lorem ipsum dolor sit.</p>
+                    </div>
+                    <div class="form__field" data-input="password" data-query="password">
+                        <label for="form__text-3">Password</label>
+                        <div class="form__text">
+                            <input autocomplete="off" placeholder="Password" type="password" name="form__text-3" id="form__text-3" class="form__text-real">
+                            <div class="form__field-error-icon error">
+                                <i class="fa-solid fa-triangle-exclamation fa-lg"></i>
+                            </div>
+                        </div>
+                        <div class="password">
+                            <div class="password__bar">
+                                <div class="s"></div>
+                                <div class="s"></div>
+                                <div class="s"></div>
+                                <div class="s"></div>
+                            </div>
+                            <p class="password__text"></p>
+                        </div>
+                        <p class="form__field-error-text">Lorem ipsum dolor sit.</p>
+                        <div class="form__field-strength">
+                            
+                        </div>
+                        
+                    </div>
+                    <div class="form__field" data-input="confirm-password" data-query="confirm-password" data-from="form__text-3">
+                        <label for="form__text-4">Confirm your password</label>
+                        <div class="form__text">
+                            <input autocomplete="off" placeholder="Retype your password" type="password" name="form__text-4" id="form__text-4" class="form__text-real">
+                            <div class="form__field-error-icon error">
+                                <i class="fa-solid fa-triangle-exclamation fa-lg"></i>
+                            </div>
+                        </div>
+                        <p class="form__field-error-text">Lorem ipsum dolor sit.</p>
+                    </div>
+                </form>
+                <div class="form__submit">
+                    <button>Continue</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

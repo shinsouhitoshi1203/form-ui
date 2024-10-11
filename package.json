@@ -1,0 +1,11 @@
+{
+  "name": "form-ui",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass ./:./ -w"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
