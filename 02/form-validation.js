@@ -26,6 +26,7 @@ export default class FormValidation {
         passwordMatch: "The password you've just typed doesn't match with the password you typed earlier",
     };
     #ErrorMessages = {};
+    #cb = function (){};
 
     // regex defaults
     Regex = {
@@ -37,7 +38,8 @@ export default class FormValidation {
     };
 
     // constructors
-    constructor (objInput) {
+    constructor (objInput, callback) {
+        this.#cb = callback;
         if (!objInput || !objInput?.formID) throw new Error("Unknown form field nodes");
         // getting data
         this.#formID = objInput.formID;
@@ -78,7 +80,7 @@ export default class FormValidation {
                 ///// ..last input, its nothing but to submit the form
                 if (eKey == "Enter") {
                     if (isSubmit) {
-                        if (this.submit(this.toObject())) {
+                        if (this.submit(this.#cb)) {
                             this.preventInput();
                         };
                     } 
@@ -323,6 +325,11 @@ export default class FormValidation {
                     )
                 }
             );
+            $(`#${formTarget} .form__submit button`).addEventListener("click", (e)=>{
+                _class.submit(_class.#cb)
+                e.preventDefault();
+                return false;
+            });
         });
     }
 
@@ -362,25 +369,18 @@ export default class FormValidation {
     submit(callback) {
         const _class = this;
         const formTarget = this.#formID;
-        document.addEventListener("DOMContentLoaded", function () {
-            $(`#${formTarget} .form__submit button`).addEventListener("click", (e)=>{
-                if (_class.preCheck()) {
-                    console.log ("ddd",_class.toObject());
-                    callback(_class.toObject());
-                    $(`#${formTarget} .form__submit button`).disabled = true;
-                    return true;
-                } else {
-                    $$(`#${formTarget} .form__text-real`).forEach(
-                        function (txtbox)  {
-                            let _this = findParent(txtbox, "form__field");
-                            _class.validate(txtbox, _this);
-                        }
-                    );
+        if (_class.preCheck()) {
+            callback(_class.toObject());
+            $(`#${formTarget} .form__submit button`).disabled = true;
+            return true;
+        } else {
+            $$(`#${formTarget} .form__text-real`).forEach(
+                function (txtbox)  {
+                    let _this = findParent(txtbox, "form__field");
+                    _class.validate(txtbox, _this);
                 }
-                e.preventDefault();
-                return false;
-            });
-        });
+            );
+        }
     }
 }
 

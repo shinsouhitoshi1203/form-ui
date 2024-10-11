@@ -65,6 +65,32 @@ p, button {
 .container__background .item2 {
   background: #1f1e1e;
 }
+.container__await {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.537254902);
+  backdrop-filter: blur(20px);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+}
+.container__await .await {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #fff;
+  opacity: 0;
+  animation: wave 0.5s infinite;
+  animation-direction: alternate-reverse;
+}
+.container__await .await:nth-of-type(even) {
+  animation-delay: 0.3s;
+}
+.container__await .await:last-of-type {
+  animation-delay: 0.5s;
+}
 .container__inner {
   position: absolute;
   inset: 0;
@@ -241,6 +267,16 @@ p, button {
   }
   100% {
     transform: translateX(0);
+  }
+}
+@keyframes wave {
+  0% {
+    transform: translateX(0);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(5px);
+    opacity: 1;
   }
 }
 
