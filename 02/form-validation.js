@@ -1,3 +1,4 @@
+// form validation module
 import Users from "./../assets/modules/02.js";
 let $ = document.querySelector.bind(document);
 let $$ = document.querySelectorAll.bind(document);
@@ -77,15 +78,14 @@ export default class FormValidation {
                 ///// ..last input, its nothing but to submit the form
                 if (eKey == "Enter") {
                     if (isSubmit) {
-                        if (register()) {
-                            preventInput();
+                        if (this.submit(this.toObject())) {
+                            this.preventInput();
                         };
                     } 
                 } else if (eKey == "ArrowDown") {
                     targetedField = $(`#${this.#formID} .form__field:first-of-type`);
                     targetedField.querySelector("input").focus();
                 }
-                
             }
         }
     }
@@ -160,6 +160,14 @@ export default class FormValidation {
                 break;
         }
     }
+    preventInput() {
+        const formTarget = this.#formID;
+        $$(`#${formTarget} .form__text-real`).forEach(
+            function (txtbox)  {
+                txtbox.disabled = true;
+            }
+        );
+    }
     // set rules for each fields
     rules = {
         isNull(inputNode, fieldNode, messageHandler) {
@@ -167,7 +175,6 @@ export default class FormValidation {
         },
         matchPassword(inputNode, fieldNode, messageHandler) {
             let passwordField = "#" + fieldNode.getAttribute("data-from");
-            console.log(passwordField)
             const password_1 = $(passwordField).value;
             const password_2 = inputNode.value;
             return (password_1!=password_2)?[inputNode,fieldNode, messageHandler]:true;
@@ -304,7 +311,7 @@ export default class FormValidation {
                     txtbox.addEventListener(
                         "keydown",
                         function (e) {
-                            console.log (e.code)
+                            // console.log (e.code)
                             if (e.code=="Enter") {
                                 _class.switchNextInput(this, e.code, true)
                             } else if (e.code=="ArrowDown") {
@@ -316,11 +323,6 @@ export default class FormValidation {
                     )
                 }
             );
-            $(`#${formTarget} .form__submit button`).addEventListener("click", (e)=>{
-                _class.ok();
-                e.preventDefault();
-                
-            })
         });
     }
 
@@ -332,16 +334,53 @@ export default class FormValidation {
         const _class = this;
         if (this.preCheck()) {
             callback;
-            $(`#${_class.formID} .form__submit button`).disabled = true;
+            $(`#${_class.#formID} .form__submit button`).disabled = true;
             return true;
         } else {
-            $$(`#${_class.formID} .form__text-real`).forEach(
+            $$(`#${_class.#formID} .form__text-real`).forEach(
                 function (txtbox)  {
                     let _this = findParent(txtbox, "form__field");
                     _class.validate(txtbox, _this);
                 }
             );
         }
+    }
+    toObject() {
+        let _class = this;
+        let arrayInput = Array.from($$(`#${this.#formID} .form__field`));
+        const trimmedData =  arrayInput.reduce(
+            (data, field) => {
+                let query = field.getAttribute("data-query");
+                let value = field.querySelector("input").value;
+                return {...data, [query]: value}
+            },
+            {}
+        );
+        delete trimmedData["confirm-password"];
+        return trimmedData;
+    }
+    submit(callback) {
+        const _class = this;
+        const formTarget = this.#formID;
+        document.addEventListener("DOMContentLoaded", function () {
+            $(`#${formTarget} .form__submit button`).addEventListener("click", (e)=>{
+                if (_class.preCheck()) {
+                    console.log ("ddd",_class.toObject());
+                    callback(_class.toObject());
+                    $(`#${formTarget} .form__submit button`).disabled = true;
+                    return true;
+                } else {
+                    $$(`#${formTarget} .form__text-real`).forEach(
+                        function (txtbox)  {
+                            let _this = findParent(txtbox, "form__field");
+                            _class.validate(txtbox, _this);
+                        }
+                    );
+                }
+                e.preventDefault();
+                return false;
+            });
+        });
     }
 }
 
